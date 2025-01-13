@@ -15,7 +15,7 @@ public class Bedrijfsinventaris {
 
     public void schafAan(Goed g) {
         System.out.printf("Het goed: %s%n", g.toString());
-        System.out.printf("Het budget: %.1f%n", budget);
+        System.out.printf("Het budget: %s%n", Utils.euroBedrag(budget, 1));
         if (budget - g.huidigeWaarde() >= 0 && !alleGoederen.contains(g)) {
             budget -= g.huidigeWaarde();
             alleGoederen.add(g);
@@ -34,7 +34,7 @@ public class Bedrijfsinventaris {
         for (Goed g : alleGoederen) {
             message += g.toString() + "\n";
         }
-        message += String.format("\nHet overige budget is €%.1f", budget);
+        message += String.format("\nHet overige budget is %s", Utils.euroBedrag(budget, 1));
         return message;
     }
 }

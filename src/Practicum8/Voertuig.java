@@ -11,15 +11,15 @@ public abstract class Voertuig implements Goed {
         bouwjaar = jr;
     }
     public boolean equals(Object obj) {
-        boolean zelfdeVoertuig = false;
-        if (this.type.equals(((Voertuig) obj).type) && this.nieuwprijs == ((Voertuig) obj).nieuwprijs && this.bouwjaar == ((Voertuig) obj).bouwjaar) {
-            zelfdeVoertuig = true;
-            return zelfdeVoertuig;
-        }
-        return zelfdeVoertuig;
-    };
+        return this.type.equals(((Voertuig) obj).type)
+                && this.nieuwprijs == ((Voertuig) obj).nieuwprijs
+                && this.bouwjaar == ((Voertuig) obj).bouwjaar;
+    }
 
     public String toString() {
-        return String.format("Voertuig: %s met bouwjaar %d heeft een waarde van: €%.1f", type, bouwjaar, huidigeWaarde());
+        return String.format("Voertuig: %s met bouwjaar %d heeft een waarde van: %s",
+                type,
+                bouwjaar,
+                Utils.euroBedrag(huidigeWaarde()));
     }
 }

@@ -25,6 +25,10 @@ public class Main {
         bedrijfsinventaris.schafAan(computer2);
         bedrijfsinventaris.schafAan(computer3);
 
+        System.out.printf("Utils.main has been called: %d times%n", Utils.getCounter());
+        Utils.main(args);
+        System.out.printf("Utils.main has been called: %d times%n", Utils.getCounter());
+
         System.out.println("\nAangeschafte producten:\n");
         System.out.println(bedrijfsinventaris);
     }
